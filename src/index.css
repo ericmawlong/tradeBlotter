@@ -1,0 +1,65 @@
+* {
+  margin: 25px;
+  padding: 5px;
+  box-sizing: border-box;
+  font-family: 'Raleway';
+} 
+
+.contentTable {
+  margin: 0 auto;
+  border-collapse: 'collapse';
+  font-size: 0.9em;
+  min-height: 200px;
+  min-width: 800px; 
+  border-radius: 5px 5px 0 0;
+  overflow: hidden;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.15)
+}
+
+.contentTable thead tr {
+  background-color: #26a69a;
+  text-align: center;
+  color: white;
+  text-shadow: #000 0px 0px 1px;
+}
+
+.contentTable th {
+  padding: 12px 15px;
+}
+
+.contentTable tbody td,
+.contentTable tbody tr {
+  border-bottom: 1px solid #dddddd;
+}
+
+.contentTable tbody tr:nth-of-type(even) {
+  background-color: #def7ef;
+}
+
+.contentTable tbody tr:last-of-type {
+  border-bottom: 1px solid #26a69a;
+}
+
+  .addFund {
+  float: right;
+  margin-right: 17.5%;
+
+}
+
+  .verifyTrade {
+  clear: both;
+  margin: 0 auto;
+  }   
+
+button{
+  display: block;
+  border: none;
+  background: #26a69a;
+  padding: 7px 20px;
+  cursor: pointer;
+  color: white;
+}
+
+button:hover {
+  background: rgba(23, 172, 139, 0.774)
+} 
