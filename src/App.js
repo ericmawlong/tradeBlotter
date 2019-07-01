@@ -1,13 +1,11 @@
 import React from 'react';
-import './App.css';
-// import PopupExample from './Components/PopupExample';
+import './Components/tradeBlotter.css' 
 import Table from './Components/Table';
 
 function App() {
   return (
     <div className="App">
-      {/* <PopupExample /> */}
-      <Table />
+      <Table></Table>
     </div>
   );
 }

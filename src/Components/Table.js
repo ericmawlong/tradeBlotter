@@ -1,6 +1,10 @@
-//Component for table
+//component for displaying funds
 
 import React, { Component } from 'react'
+import './tradeBlotter.css' 
+import AddFund from './AddFund'
+// import 'materialize-css/dist/css/materialize.min.css';
+// import M from 'materialize-css'
 // import axios from 'axios'
 
 class Table extends Component {
@@ -12,7 +16,8 @@ class Table extends Component {
               fundName: [],
               fundNumber: [],
               rating: [],
-              invCurr: []
+              invCurr: [],
+              fundForm : []
          }
     }
 
@@ -26,12 +31,30 @@ class Table extends Component {
     //         console.log(error)
     //     })
     // }
+
+    componentDidMount(){
+        var fundForm = [];
+        fundForm.push(<AddFund key="1"/>);
+        this.setState({
+            fundForm: fundForm
+        })
+    }
     
+    handleVerify = (event) => {
+        event.preventDefault();
+        // var baseUrl = "http://localhost:8762/";
+        // var payload = {
+        //     "fundName": this.state.fundName,
+        //     "fundNumber": this.state.fundNumber,
+        //     "rating": this.state.rating,
+        //     "invCurr": this.state.invCurr
+        // }
+    }
+
     render() {
         return (
             <div>
-                <h3>Trade Blotter</h3>
-                <table class='contentTable'>
+                <table className='contentTable'>
                     <thead>
                         <tr>
                             <th>Fund Name</th>
@@ -62,8 +85,17 @@ class Table extends Component {
                         </tr>
                     </tbody>
                 </table>
-                <button class='addFund' type='submit'>+ ADD FUND</button>
-                <button class = 'verifyTrade' type='submit'>VERIFY TRADE</button>
+
+                {this.state.fundForm}
+
+                
+                {/* <button className='addFund' type='submit' addFund = {this.addFund} onClick={this.handleAdd} >
+                    + ADD FUND
+                </button> */}
+
+                <button className = 'verifyTrade' type='submit' onSubmit={this.handleVerify}>
+                    VERIFY TRADE
+                </button>
             </div>
         )
     }
