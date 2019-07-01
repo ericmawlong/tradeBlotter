@@ -3,8 +3,8 @@
 import React, { Component } from 'react'
 import './tradeBlotter.css' 
 import AddFund from './AddFund'
-// import 'materialize-css/dist/css/materialize.min.css';
-// import M from 'materialize-css'
+import 'materialize-css/dist/css/materialize.min.css';
+import M from 'materialize-css'
 // import axios from 'axios'
 
 class Table extends Component {
@@ -53,8 +53,8 @@ class Table extends Component {
 
     render() {
         return (
-            <div>
-                <table className='contentTable'>
+            <div className="page-content">
+                <table className='centered'>
                     <thead>
                         <tr>
                             <th>Fund Name</th>
@@ -86,16 +86,12 @@ class Table extends Component {
                     </tbody>
                 </table>
 
-                {this.state.fundForm}
-
-                
-                {/* <button className='addFund' type='submit' addFund = {this.addFund} onClick={this.handleAdd} >
-                    + ADD FUND
-                </button> */}
-
-                <button className = 'verifyTrade' type='submit' onSubmit={this.handleVerify}>
-                    VERIFY TRADE
-                </button>
+                <div class="popup-container">
+                    {this.state.fundForm}
+                    <button className = 'verifyTrade' type='submit' onSubmit={this.handleVerify}>
+                        VERIFY TRADE
+                    </button>
+                </div>
             </div>
         )
     }
